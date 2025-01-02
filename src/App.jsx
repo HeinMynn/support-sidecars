@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import images from "./assets/images.jpg";
+import "./App.css";
 
 function App() {
   const [lu, setLu] = useState(true);
@@ -13,26 +12,27 @@ function App() {
     if (ohn && mu) {
       setMu(false);
     }
-  }
+  };
 
   const handleohn = (e) => {
     setOhn(e.target.checked);
     if (lu && mu) {
       setLu(false);
     }
-  }
+  };
 
   const handleMu = (e) => {
     setMu(e.target.checked);
     if (lu && ohn) {
       setOhn(false);
     }
-  }
+  };
 
   return (
-    <div className='flex flex-row justify-center items-center h-screen bg-gray-100'>
+    <div className="flex flex-row justify-center items-center h-screen bg-gray-100">
       <div className="flex flex-col items-start justify-center min-h-screen bg-gray-100 space-y-4">
-        <div className='flex items-center space-x-4'>
+        <img src={images} className="block w-full" />
+        <div className="flex items-center space-x-4">
           <label className="flex items-center cursor-pointer">
             <div className="relative">
               <input
@@ -41,12 +41,15 @@ function App() {
                 checked={lu}
                 onChange={handlelu}
               />
-              <div className={`block w-14 h-8 rounded-full ${lu ? 'bg-green-500' : 'bg-gray-600'}`}></div>
+              <div
+                className={`block w-14 h-8 rounded-full ${
+                  lu ? "bg-green-500" : "bg-gray-600"
+                }`}
+              ></div>
               <div
                 className="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition transform"
                 style={{
-                  transform:
-                    lu ? "translateX(100%)" : "translateX(0)",
+                  transform: lu ? "translateX(100%)" : "translateX(0)",
                 }}
               ></div>
             </div>
@@ -54,21 +57,24 @@ function App() {
           </label>
         </div>
 
-        <div className='flex items-center space-x-4'>
+        <div className="flex items-center space-x-4">
           <label className="flex items-center cursor-pointer">
             <div className="relative">
               <input
                 type="checkbox"
-                className='sr-only'
+                className="sr-only"
                 checked={ohn}
                 onChange={handleohn}
               />
-              <div className={`block w-14 h-8 rounded-full ${ohn ? 'bg-blue-500' : 'bg-gray-600'}`}></div>
+              <div
+                className={`block w-14 h-8 rounded-full ${
+                  ohn ? "bg-blue-500" : "bg-gray-600"
+                }`}
+              ></div>
               <div
                 className="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition transform"
                 style={{
-                  transform:
-                    ohn ? "translateX(100%)" : "translateX(0)",
+                  transform: ohn ? "translateX(100%)" : "translateX(0)",
                 }}
               ></div>
             </div>
@@ -76,7 +82,7 @@ function App() {
           </label>
         </div>
 
-        <div className='flex items-center space-x-4'>
+        <div className="flex items-center space-x-4">
           <label className="flex items-center cursor-pointer">
             <div className="relative">
               <input
@@ -85,12 +91,15 @@ function App() {
                 onChange={handleMu}
                 className="sr-only"
               />
-              <div className={`block w-14 h-8 rounded-full ${mu ? 'bg-red-500' : 'bg-gray-600'}`}></div>
+              <div
+                className={`block w-14 h-8 rounded-full ${
+                  mu ? "bg-red-500" : "bg-gray-600"
+                }`}
+              ></div>
               <div
                 className="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition transform"
                 style={{
-                  transform:
-                    mu ? "translateX(100%)" : "translateX(0)",
+                  transform: mu ? "translateX(100%)" : "translateX(0)",
                 }}
               ></div>
             </div>
@@ -102,4 +111,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
