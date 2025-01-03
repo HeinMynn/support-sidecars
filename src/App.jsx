@@ -1,6 +1,7 @@
 import { useState } from "react";
 import images from "./assets/images.jpg";
 import "./App.css";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [lu, setLu] = useState(true);
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="flex flex-row justify-center items-center h-screen bg-gray-100">
+      <Analytics />
       <div className="flex flex-col items-start justify-center min-h-screen bg-gray-100 space-y-4">
         <img src={images} className="block w-full" />
         <div className="flex items-center space-x-4">
